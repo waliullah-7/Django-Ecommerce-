@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<div class="category-item list">
+    <!-- BEGIN item-row -->
+    <div class="item-row">
+
+        {% for p in tab|slice:6 %}
+        <div class="item item-thumbnail">
+            <a href="product_detail.html" class="item-image">
+                <img src="{{p.image.url}}" alt="" />
+                <div class="discount">{{p.discount_percent}}% OFF</div>
+            </a>
+            <div class="item-info">
+                <h4 class="item-title">
+                    <a href="product_detail.html">{{p.title}}<br />16GB</a>
+                </h4>
+                <p class="item-desc">3D Touch. 12MP photos. 4K video.</p>
+                <div class="item-price">{{p.selling_price}}</div>
+                <div class="item-discount-price">{{p.discounted_price}}</div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- END item -->
+    </div>
+    <!-- END item-row -->
+</div>
+<!-- END category-item -->
+</div>
+<!-- END category-detail -->
+</div>
+<!-- END category-container -->
+</div>
+<!-- END container -->
+</div>
+<!-- END #tablet-list -->
+<!---->
+
+
+{% endblock content %}
